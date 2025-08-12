@@ -1,0 +1,178 @@
+ /* General body styles */
+ body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 0;
+}
+
+/* Main container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    flex-wrap: wrap; /* Allow elements to wrap on smaller screens */
+}
+
+/* Blog section */
+.blog {
+    width: 70%;
+    margin-right: 20px;
+}
+
+.blog h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #f39c12;
+}
+
+.post {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.post h2 {
+    font-size: 2rem;
+    color: #f39c12;
+    margin-bottom: 10px;
+}
+
+.post p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.post a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.post a:hover {
+    color: #f39c12;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 25%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #f39c12;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    color: #3498db;
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Laptop and Desktop */
+@media (max-width: 1200px) {
+    .blog {
+        width: 70%;
+    }
+    .sidebar {
+        width: 25%;
+    }
+}
+
+/* iPad (portrait and landscape) */
+@media (max-width: 1024px) {
+    .blog {
+        width: 60%;
+        margin-right: 20px;
+    }
+    .sidebar {
+        width: 35%;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .blog {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .post h2 {
+        font-size: 1.5rem;
+    }
+
+    .post p {
+        font-size: 0.9rem;
+    }
+
+    .sidebar h3 {
+        font-size: 1.8rem;
+    }
+
+    .sidebar ul li a {
+        font-size: 1rem;
+    }
+}
+

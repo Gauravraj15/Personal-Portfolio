@@ -1,0 +1,83 @@
+/* Body Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #8e44ad, #3498db);
+    color: white;
+    padding: 0;
+    transition: background 1s ease-in-out; /* Smooth transition for background */
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/* Services Container */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns */
+    gap: 20px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.service {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(120deg, #f39c12, #e74c3c); /* Hover multicolor */
+    color: white;
+}
+
+.service h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.service p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .services-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .services-container {
+        grid-template-columns: 1fr; /* 1 column for very small screens */
+    }
+}
