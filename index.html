@@ -1,88 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Gaurav Raj | Animated Portfolio Website</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaurav Raj | Software Dev & Tester</title>
+    <meta name="description" content="Gaurav Raj - Software Developer & Tester specializing in Python, Full Stack, QA and scalable solutions.">
+    <meta name="author" content="Gaurav Raj">
 
-      <!-- Meta Tags for SEO -->
-      <meta name="description" content="Explore Gaurav Raj's portfolio website - a software developer, designer, and illustrator. Download CV or hire me now.">
-      <meta name="keywords" content="Gaurav Raj, Software Developer, Portfolio, Designer, Hire Me, Download CV">
-      <meta name="author" content="Gaurav Raj">
-      <meta name="robots" content="index, follow">
-      <meta property="og:title" content="Gaurav Raj | Animated Portfolio Website">
-      <meta property="og:description" content="Explore Gaurav Raj's portfolio website - a software developer, designer, and illustrator. Download CV or hire me now.">
-      <meta property="og:image" content="image/gaurav.png">
-      <meta property="og:url" content="https://yourwebsiteurl.com">
-      <meta property="og:type" content="website">
+    <!-- Google Fonts + Boxicons + Bootstrap Icons (optional) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-      <!-- Canonical Link -->
-      <link rel="canonical" href="https://yourwebsiteurl.com">
+    <!-- === DARK/LIGHT TOGGLE === -->
+    <div class="theme-toggle" id="theme-toggle">
+        <i class='bx bx-sun'></i>
+        <i class='bx bx-moon' style="display: none;"></i>
+    </div>
 
-      <!-- CSS -->
-      <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- === MODERN STICKY HEADER === -->
+    <header class="glass-header" id="header">
+        <div class="container nav-container">
+            <a href="#home" class="logo"><span class="logo-accent">G</span>aurav<span class="dot">.</span>Raj</a>
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#blog" class="nav-link">Blog</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-      <!-- Boxicons -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-
-      <!-- Google Fonts -->
-      <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;900&display=swap" rel="stylesheet">
-   </head>
-   <body>
-      <header>
-         <a href="https://yourwebsiteurl.com" class="logo"><span>S</span>oftech</a>
-         <nav>
-            <ul class="navbar">
-               <li><a href="https://yourwebsiteurl.com" class="active">Home</a></li>
-               <li><a href="about.html" target="_blank">About</a></li>
-               <li><a href="Services.html" target="_blank">Services</a></li>
-               <li><a href="Blog.html" target="_blank">Blog</a></li>
-               <li><a href="Contract.html" target="_blank">Contact</a></li>
-            </ul>
-         </nav>
-         <div class="menu-btn">
-            <span>INTRO</span>
-            <div class="bx bx-menu" id="menu-icon"></div>
-         </div>
-      </header>
-      <main>
-         <section class="home">
-            <div class="home-text">
-               <span>Software Developer</span>
-               <h1>Gaurav Raj</h1>
-               <p>Excels in website design, software development, and machine learning, delivering innovative and impactful solutions with precision., and the occasionally useful side-projects.</p>
-               <div class="main-btn">
-                  <!-- Download CV Button -->
-                  <a href="files/su.pdf" class="btn" download="Gaurav_Raj_CV.pdf">Download CV</a>
-                  <a href="files/Hire_me.pdf" class="btn two" download="Gaurav_Raj_Hire_Me.pdf">Hire Me Now</a>
-               </div>
+    <main>
+        <!-- === HERO SECTION === -->
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">🚀 Software Dev & QA Specialist</div>
+                    <h1 class="hero-title">Gaurav Raj</h1>
+                    <p class="hero-desc">Building scalable apps, enforcing quality, and turning ideas into robust software. Full-stack developer with a tester's mindset.</p>
+                    <div class="btn-group">
+                        <a href="files/GauravKumarCv.pdf" class="btn btn-primary" download="GauravKumarCv.pdf">
+                            <i class='bx bx-download'></i> Download CV
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class='bx bx-chat'></i> Hire Me Now
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div><span>2+</span> Years exp.</div>
+                        <div><span>15+</span> Projects</div>
+                        <div><span>100%</span> Delivery</div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                   <div class="avatar-glass">
+    <img src="image/Profile.jpeg" alt="Gaurav Raj" class="avatar-img">
+    <div class="pulse-ring"></div>
+</div>
+                </div>
             </div>
-            <div class="home-img">
-               <img src="image/gaurav.png" alt="Portrait of Gaurav Raj, Software Developer">
+        </section>
+
+        <!-- === ABOUT SECTION (UPDATED CONTENT) === -->
+        <section id="about" class="about section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">GET TO KNOW</span>
+                    <h2>About Me</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p class="lead">Software Developer & Software Tester with expertise in Python, Full Stack Development, Web Development, and Quality Assurance.</p>
+                        <p>Passionate about building scalable applications, testing software for reliability, and solving real-world problems through technology. Experienced in developing projects, debugging, automation, and continuous learning. Open to opportunities that allow me to contribute, innovate, and grow in the software industry.</p>
+                        <!-- <div class="info-list">
+                            <div><i class='bx bx-envelope'></i> gauravkr1514@gmail.com</div>
+                            <div><i class='bx bx-phone-call'></i> +91 8797314795</div>
+                            <div><i class='bx bx-map'></i> Begusarai, Bihar, India</div>
+                            <div><i class='bx bx-time-five'></i> Freelance / Remote / Full-time</div>
+                        </div> -->
+                    </div>
+                    <div class="about-highlight">
+                        <div class="highlight-card"><i class='bx bx-code-alt'></i><h4>1k+</h4><p>Lines of Code / week</p></div>
+                        <div class="highlight-card"><i class='bx bx-globe'></i><h4>10+</h4><p>Web Apps Deployed</p></div>
+                        <div class="highlight-card"><i class='bx bx-bug'></i><h4>98%</h4><p>Bug detection rate</p></div>
+                    </div>
+                </div>
             </div>
-         </section>
-         <div class="share">
-            <footer>
-               <p>Connect With Me On:</p>
-               <br>
-               <div class="social">
-                  <a href="https://www.facebook.com/gauravraj.gauravraj.3363?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                     <i class='bx bxl-facebook'></i>
-                  </a>
-                  <a href="https://www.linkedin.com/in/gaurav-raj-916a682b8" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                     <i class='bx bxl-linkedin'></i>
-                  </a>
-                  <a href="https://www.instagram.com/samar_8797_roy?igsh=dmVkZWNhd3l0bDg0&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                     <i class='bx bxl-instagram'></i>
-                  </a>
-                  <a href="https://wa.me/+918797314795" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                     <i class='bx bxl-whatsapp'></i>
-                  </a>
-               </div>
-            </footer>
-         </div>
-      </main>
-      <script src="https://unpkg.com/scrollreveal"></script>
-      <script src="js/script.js"></script>
-   </body>
+        </section>
+
+        <!-- === SKILLS SECTION (Added HTML/CSS/Bootstrap + gloat hover) === -->
+        <section id="skills" class="skills section-padding alt-bg">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Expertise & tools</span>
+                    <h2>Technical Skills</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class='bx bxl-python'></i> Python</div>
+                    <div class="skill-card"><i class='bx bxl-javascript'></i> JavaScript (ES6+)</div>
+                    <div class="skill-card"><i class='bx bxl-react'></i> React & Next.js</div>
+                    <div class="skill-card"><i class='bx bxl-nodejs'></i> Node.js / Express</div>
+                    <div class="skill-card"><i class='bx bxl-java'></i> Java / C++</div>
+                    <div class="skill-card"><i class='bx bx-data'></i> MySQL, MongoDB</div>
+                    <div class="skill-card"><i class='bx bxl-flutter'></i> React Native</div>
+                    <div class="skill-card"><i class='bx bxl-html5'></i> HTML5</div>
+                    <div class="skill-card"><i class='bx bxl-css3'></i> CSS3 / Tailwind</div>
+                    <div class="skill-card"><i class='bx bxl-bootstrap'></i> Bootstrap</div>
+                    <div class="skill-card"><i class='bx bx-cloud'></i> AWS, Firebase</div>
+                    <div class="skill-card"><i class='bx bx-line-chart'></i> TensorFlow</div>
+                    <div class="skill-card"><i class='bx bx-test-tube'></i> Selenium / JUnit</div>
+                    <div class="skill-card"><i class='bx bx-git-branch'></i> Git, GitHub, CI/CD</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === SERVICES SECTION === -->
+        <section id="services" class="services section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">What I do</span>
+                    <h2>Services I Offer</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card"><i class='bx bx-code-curly'></i><h3>Web Development</h3><p>Responsive, dynamic websites & SPAs with modern stacks.</p></div>
+                    <div class="service-card"><i class='bx bx-mobile-alt'></i><h3>Mobile Apps</h3><p>Cross-platform apps (React Native, Flutter).</p></div>
+                    <div class="service-card"><i class='bx bx-bug'></i><h3>QA & Automation</h3><p>Manual & automated testing, Selenium, JUnit, reliability.</p></div>
+                    <div class="service-card"><i class='bx bx-server'></i><h3>Backend & APIs</h3><p>RESTful APIs, microservices, database optimization.</p></div>
+                    <div class="service-card"><i class='bx bx-cloud-upload'></i><h3>Cloud Deployment</h3><p>AWS, Firebase, CI/CD pipelines.</p></div>
+                    <div class="service-card"><i class='bx bx-analyse'></i><h3>Tech Consulting</h3><p>Code reviews, architecture, performance tuning.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === PORTFOLIO (Removed Library Management System, kept 3 best projects) === -->
+        <section id="portfolio" class="portfolio section-padding alt-bg">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Featured work</span>
+                    <h2>Recent Projects</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="portfolio-grid">
+                    <div class="portfolio-card">
+                        <div class="portfolio-icon"><i class='bx bx-cart-alt'></i></div>
+                        <h3>E‑commerce Web App</h3>
+                        <p>Full-stack platform: React, Node.js, Stripe integration. Real-time inventory & payments.</p>
+                        <a href="https://github.com/gaurav/e-commerce" class="portfolio-link">View Repo →</a>
+                    </div>
+                    <div class="portfolio-card">
+                        <div class="portfolio-icon"><i class='bx bx-cloud-rain'></i></div>
+                        <h3>Weather Mobile App</h3>
+                        <p>React Native + OpenWeather API, geolocation, and forecast widgets.</p>
+                        <a href="https://github.com/gaurav/weather-app" class="portfolio-link">View Repo →</a>
+                    </div>
+                    <div class="portfolio-card">
+                        <div class="portfolio-icon"><i class='bx bx-library'></i></div>
+                        <h3>Student Management System</h3>
+                        <p>Python, MySQL, REST API – full CRUD, attendance & grade tracking system.</p>
+                        <a href="#" class="portfolio-link">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === BLOG SECTION === -->
+        <section id="blog" class="blog section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Insights & articles</span>
+                    <h2>Latest from my Blog</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <div class="blog-date">Jan 12, 2025</div>
+                        <h3>Understanding JavaScript Closures</h3>
+                        <p>Closures are one of the most powerful features in JavaScript. Explore scopes and real-world usage.</p>
+                        <a href="#" class="read-more">Read more →</a>
+                    </article>
+                    <article class="blog-card">
+                        <div class="blog-date">Feb 5, 2025</div>
+                        <h3>Scalable Web Apps with Node.js</h3>
+                        <p>Best practices: clustering, event loop optimization, microservices for high-performance backends.</p>
+                        <a href="#" class="read-more">Read more →</a>
+                    </article>
+                    <article class="blog-card">
+                        <div class="blog-date">Mar 18, 2025</div>
+                        <h3>Intro to Machine Learning with Python</h3>
+                        <p>Step-by-step guide: scikit-learn pipelines, data preprocessing, first classifier.</p>
+                        <a href="#" class="read-more">Read more →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- === CONTACT SECTION (Clean and professional) === -->
+        <section id="contact" class="contact section-padding alt-bg">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Let's connect</span>
+                    <h2>Get In Touch</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h3>Work with me</h3>
+                        <p>Available for freelance, full-time, and remote collaborations. Let's bring your ideas to life.</p>
+                        <div class="contact-detail"><i class='bx bx-dollar-circle'></i> <span>Hourly Rate: $5/hr | Project based</span></div>
+                        <div class="contact-detail"><i class='bx bx-envelope'></i> <span>gau879731raj@gamil.com</span></div>
+                        <div class="contact-detail"><i class='bx bx-phone'></i> <span>+91 8797314795</span></div>
+                        <div class="contact-detail"> <div><i class='bx bx-map'></i> Begusarai, Bihar, India</div></span></div>
+                    </div>
+                    <div class="contact-form">
+                        <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+                            <input type="hidden" name="access_key" value="2885a7cb-55aa-41ac-965e-a20c5afff276">
+                            <input type="text" name="name" placeholder="Your name" required>
+                            <input type="email" name="email" placeholder="Email address" required>
+                            <textarea name="message" rows="4" placeholder="Tell me about your project..."></textarea>
+                            <button type="submit" class="btn btn-primary full-width">Send Message <i class='bx bx-send'></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- === FOOTER WITH SINGLE SOCIAL ICON BAR (only once) === -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Gaurav Raj — <span>Code | Test | Deploy</span></div>
+                <div class="social-footer">
+                    <a href="https://www.linkedin.com/in/gaurav-raj-916a682b8" target="_blank" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://github.com/gaurav" target="_blank" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.facebook.com/gauravraj.gauravraj.3363" target="_blank" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://www.instagram.com/samar_8797_roy" target="_blank" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://wa.me/+918797314795" target="_blank" aria-label="WhatsApp"><i class='bx bxl-whatsapp'></i></a>
+                </div>
+                <div class="footer-copyright">© 2025 Gaurav Raj. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript (Separate) -->
+    <script src="js/script.js"></script>
+</body>
 </html>
