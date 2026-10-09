@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaurav Raj | Software Dev & Tester</title>
-    <meta name="description" content="Gaurav Raj - Software Developer & Tester specializing in Python, Full Stack, QA and scalable solutions.">
-    <meta name="author" content="Gaurav Raj">
+    <title>Gaurav Kumar | Software Dev & Tester</title>
+    <meta name="description" content="Gaurav Kumar - Software Developer & Tester specializing in Python, Full Stack, QA and scalable solutions.">
+    <meta name="author" content="Gaurav Kumar">
 
-    <!-- Google Fonts + Boxicons + Bootstrap Icons (optional) -->
+    <!-- Google Fonts + Boxicons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <!-- Main CSS -->
@@ -15,16 +15,10 @@
 </head>
 <body>
 
-    <!-- === DARK/LIGHT TOGGLE === -->
-    <div class="theme-toggle" id="theme-toggle">
-        <i class='bx bx-sun'></i>
-        <i class='bx bx-moon' style="display: none;"></i>
-    </div>
-
     <!-- === MODERN STICKY HEADER === -->
     <header class="glass-header" id="header">
         <div class="container nav-container">
-            <a href="#home" class="logo"><span class="logo-accent">G</span>aurav<span class="dot">.</span>Raj</a>
+            <a href="#home" class="logo"><span class="logo-accent">G</span>aurav<span class="dot">.</span>Kumar</a>
             <nav>
                 <ul class="nav-menu" id="nav-menu">
                     <li><a href="#home" class="nav-link active">Home</a></li>
@@ -34,6 +28,11 @@
                     <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
                     <li><a href="#blog" class="nav-link">Blog</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <!-- ✅ THEME TOGGLE NOW INSIDE THE NAV (right beside Contact) -->
+                    <li class="theme-toggle-nav" id="theme-toggle-nav">
+                        <i class='bx bx-sun'></i>
+                        <i class='bx bx-moon' style="display: none;"></i>
+                    </li>
                 </ul>
                 <div class="hamburger" id="hamburger">
                     <i class='bx bx-menu'></i>
@@ -48,7 +47,7 @@
             <div class="container hero-grid">
                 <div class="hero-content">
                     <div class="hero-badge">🚀 Software Dev & QA Specialist</div>
-                    <h1 class="hero-title">Gaurav Raj</h1>
+                    <h1 class="hero-title">Gaurav Kumar</h1>
                     <p class="hero-desc">Building scalable apps, enforcing quality, and turning ideas into robust software. Full-stack developer with a tester's mindset.</p>
                     <div class="btn-group">
                         <a href="files/GauravKumarCv.pdf" class="btn btn-primary" download="GauravKumarCv.pdf">
@@ -65,15 +64,17 @@
                     </div>
                 </div>
                 <div class="hero-visual">
-                   <div class="avatar-glass">
-    <img src="image/Profile.jpeg" alt="Gaurav Raj" class="avatar-img">
-    <div class="pulse-ring"></div>
-</div>
+                    <div class="avatar-glass">
+                        <!-- ✅ Use your actual image path here -->
+                        <img src="image/Profile.jpeg" alt="Gaurav Kumar" class="avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="avatar-initials" style="display: none; position: absolute; font-size: 4rem; font-weight: 800; color: #2563eb;">GK</div>
+                        <div class="pulse-ring"></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- === ABOUT SECTION (UPDATED CONTENT) === -->
+        <!-- === ABOUT SECTION === -->
         <section id="about" class="about section-padding">
             <div class="container">
                 <div class="section-header">
@@ -85,12 +86,6 @@
                     <div class="about-text">
                         <p class="lead">Software Developer & Software Tester with expertise in Python, Full Stack Development, Web Development, and Quality Assurance.</p>
                         <p>Passionate about building scalable applications, testing software for reliability, and solving real-world problems through technology. Experienced in developing projects, debugging, automation, and continuous learning. Open to opportunities that allow me to contribute, innovate, and grow in the software industry.</p>
-                        <!-- <div class="info-list">
-                            <div><i class='bx bx-envelope'></i> gauravkr1514@gmail.com</div>
-                            <div><i class='bx bx-phone-call'></i> +91 8797314795</div>
-                            <div><i class='bx bx-map'></i> Begusarai, Bihar, India</div>
-                            <div><i class='bx bx-time-five'></i> Freelance / Remote / Full-time</div>
-                        </div> -->
                     </div>
                     <div class="about-highlight">
                         <div class="highlight-card"><i class='bx bx-code-alt'></i><h4>1k+</h4><p>Lines of Code / week</p></div>
@@ -101,7 +96,7 @@
             </div>
         </section>
 
-        <!-- === SKILLS SECTION (Added HTML/CSS/Bootstrap + gloat hover) === -->
+        <!-- === SKILLS SECTION === -->
         <section id="skills" class="skills section-padding alt-bg">
             <div class="container">
                 <div class="section-header">
@@ -147,7 +142,7 @@
             </div>
         </section>
 
-        <!-- === PORTFOLIO (Removed Library Management System, kept 3 best projects) === -->
+        <!-- === PORTFOLIO SECTION === -->
         <section id="portfolio" class="portfolio section-padding alt-bg">
             <div class="container">
                 <div class="section-header">
@@ -209,7 +204,7 @@
             </div>
         </section>
 
-        <!-- === CONTACT SECTION (Clean and professional) === -->
+        <!-- === CONTACT SECTION === -->
         <section id="contact" class="contact section-padding alt-bg">
             <div class="container">
                 <div class="section-header">
@@ -222,9 +217,9 @@
                         <h3>Work with me</h3>
                         <p>Available for freelance, full-time, and remote collaborations. Let's bring your ideas to life.</p>
                         <div class="contact-detail"><i class='bx bx-dollar-circle'></i> <span>Hourly Rate: $5/hr | Project based</span></div>
-                        <div class="contact-detail"><i class='bx bx-envelope'></i> <span>gau879731raj@gamil.com</span></div>
+                        <div class="contact-detail"><i class='bx bx-envelope'></i> <span>gau879731raj@gmail.com</span></div>
                         <div class="contact-detail"><i class='bx bx-phone'></i> <span>+91 8797314795</span></div>
-                        <div class="contact-detail"> <div><i class='bx bx-map'></i> Begusarai, Bihar, India</div></span></div>
+                        <div class="contact-detail"><i class='bx bx-map'></i> <span>Begusarai, Bihar, India</span></div>
                     </div>
                     <div class="contact-form">
                         <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
@@ -240,24 +235,24 @@
         </section>
     </main>
 
-    <!-- === FOOTER WITH SINGLE SOCIAL ICON BAR (only once) === -->
+    <!-- === FOOTER === -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">Gaurav Raj — <span>Code | Test | Deploy</span></div>
+                <div class="footer-logo">Gaurav Kumar — <span>Code | Test | Deploy</span></div>
                 <div class="social-footer">
                     <a href="https://www.linkedin.com/in/gaurav-raj-916a682b8" target="_blank" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
                     <a href="https://github.com/gaurav" target="_blank" aria-label="GitHub"><i class='bx bxl-github'></i></a>
-                    <a href="https://www.facebook.com/gauravraj.gauravraj.3363" target="_blank" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
-                    <a href="https://www.instagram.com/samar_8797_roy" target="_blank" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                    <!-- <a href="https://www.facebook.com/gauravraj.gauravraj.3363" target="_blank" aria-label="Facebook"><i class='bx bxl-facebook'></i></a> -->
+                    <!-- <a href="https://www.instagram.com/samar_8797_roy" target="_blank" aria-label="Instagram"><i class='bx bxl-instagram'></i></a> -->
                     <a href="https://wa.me/+918797314795" target="_blank" aria-label="WhatsApp"><i class='bx bxl-whatsapp'></i></a>
                 </div>
-                <div class="footer-copyright">© 2025 Gaurav Raj. All rights reserved.</div>
+                <div class="footer-copyright">© 2025 Gaurav Kumar. All rights reserved.</div>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript (Separate) -->
+    <!-- JavaScript -->
     <script src="js/script.js"></script>
 </body>
 </html>
