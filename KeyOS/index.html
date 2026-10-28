@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#12151a" />
+  <meta name="description" content="KeyOS — an interactive keypad phone operating system simulator that runs entirely in your browser. No real calls or messages are made." />
+  <title>KeyOS — Keypad Phone Simulator</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/phone.css" />
+  <link rel="stylesheet" href="css/apps.css" />
+</head>
+
+<body>
+  <main class="stage">
+    <header class="stage__header">
+      <h1 class="stage__title">KeyOS</h1>
+      <p class="stage__subtitle">Keypad Phone OS Simulator</p>
+    </header>
+
+    <!-- ============================================================
+         PHONE BODY
+         ============================================================ -->
+    <div class="phone" id="phone" role="application" aria-label="KeyOS simulated keypad phone">
+
+      <!-- Earpiece / speaker grille -->
+      <div class="phone__speaker" aria-hidden="true"><span></span></div>
+
+      <!-- ==========================================================
+           SCREEN
+           ========================================================== -->
+      <section class="screen" id="screen">
+        <div class="screen__scanlines" aria-hidden="true"></div>
+
+        <!-- Status bar: signal, network, battery -->
+        <header class="statusbar">
+          <span class="meter meter--signal" id="signalIndicator" role="img" aria-label="Signal strength">
+            <i></i><i></i><i></i><i></i>
+          </span>
+          <span class="statusbar__network" id="networkName">KeyOS Network</span>
+          <span class="meter meter--battery" id="batteryIndicator" role="img" aria-label="Battery level">
+            <span class="meter__fill"></span>
+          </span>
+        </header>
+
+        <!-- Active screen is mounted here by js/navigation.js -->
+        <div class="screen__content" id="screenContent"></div>
+
+        <!-- Soft key labels -->
+        <footer class="softbar">
+          <span class="softbar__label" id="softLeftLabel"></span>
+          <span class="softbar__label" id="softRightLabel"></span>
+        </footer>
+      </section>
+
+      <!-- ==========================================================
+           KEYPAD
+           ========================================================== -->
+      <div class="keypad">
+
+        <!-- Soft keys + navigation cluster -->
+        <div class="keypad__nav">
+          <button class="key key--soft" type="button" data-key="SOFT_LEFT" aria-label="Left soft key">
+            <span class="key__glyph">&#9664;&#9472;</span>
+          </button>
+          <button class="key key--arrow" type="button" data-key="UP" aria-label="Navigate up">
+            <span class="key__glyph">&#9650;</span>
+          </button>
+          <button class="key key--soft" type="button" data-key="SOFT_RIGHT" aria-label="Right soft key">
+            <span class="key__glyph">&#9472;&#9654;</span>
+          </button>
+
+          <button class="key key--arrow" type="button" data-key="LEFT" aria-label="Navigate left">
+            <span class="key__glyph">&#9664;</span>
+          </button>
+          <button class="key key--ok" type="button" data-key="OK" aria-label="OK, select">
+            <span class="key__glyph">OK</span>
+          </button>
+          <button class="key key--arrow" type="button" data-key="RIGHT" aria-label="Navigate right">
+            <span class="key__glyph">&#9654;</span>
+          </button>
+
+          <span class="keypad__blank" aria-hidden="true"></span>
+          <button class="key key--arrow" type="button" data-key="DOWN" aria-label="Navigate down">
+            <span class="key__glyph">&#9660;</span>
+          </button>
+          <span class="keypad__blank" aria-hidden="true"></span>
+        </div>
+
+        <!-- Call / End -->
+        <div class="keypad__call">
+          <button class="key key--call" type="button" data-key="CALL" aria-label="Call (simulated)">
+            <span class="key__glyph">&#9742;</span>
+          </button>
+          <button class="key key--end" type="button" data-key="END" aria-label="End call or return home">
+            <span class="key__glyph">&#10005;</span>
+          </button>
+        </div>
+
+        <!-- Numeric keypad -->
+        <div class="keypad__digits">
+          <button class="key key--digit" type="button" data-key="1" aria-label="1">
+            <span class="key__num">1</span><span class="key__letters"></span>
+          </button>
+          <button class="key key--digit" type="button" data-key="2" aria-label="2, A B C">
+            <span class="key__num">2</span><span class="key__letters">ABC</span>
+          </button>
+          <button class="key key--digit" type="button" data-key="3" aria-label="3, D E F">
+            <span class="key__num">3</span><span class="key__letters">DEF</span>
+          </button>
+
+          <button class="key key--digit" type="button" data-key="4" aria-label="4, G H I">
+            <span class="key__num">4</span><span class="key__letters">GHI</span>
+          </button>
+          <button class="key key--digit" type="button" data-key="5" aria-label="5, J K L">
+            <span class="key__num">5</span><span class="key__letters">JKL</span>
+          </button>
+          <button class="key key--digit" type="button" data-key="6" aria-label="6, M N O">
+            <span class="key__num">6</span><span class="key__letters">MNO</span>
+          </button>
+
+          <button class="key key--digit" type="button" data-key="7" aria-label="7, P Q R S">
+            <span class="key__num">7</span><span class="key__letters">PQRS</span>
+          </button>
+          <button class="key key--digit" type="button" data-key="8" aria-label="8, T U V">
+            <span class="key__num">8</span><span class="key__letters">TUV</span>
+          </button>
+          <button class="key key--digit" type="button" data-key="9" aria-label="9, W X Y Z">
+            <span class="key__num">9</span><span class="key__letters">WXYZ</span>
+          </button>
+
+          <button class="key key--digit" type="button" data-key="*" aria-label="Star">
+            <span class="key__num">&#42;</span><span class="key__letters">+</span>
+          </button>
+          <button class="key key--digit" type="button" data-key="0" aria-label="0, space">
+            <span class="key__num">0</span><span class="key__letters">&#9251;</span>
+          </button>
+          <button class="key key--digit" type="button" data-key="#" aria-label="Hash">
+            <span class="key__num">&#35;</span><span class="key__letters"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <p class="stage__hint">
+      <strong>Keyboard:</strong> Arrows = navigate &nbsp;·&nbsp; Enter = OK &nbsp;·&nbsp;
+      Backspace / Esc = Back &nbsp;·&nbsp; 0–9 &ast; &num; = keypad &nbsp;·&nbsp;
+      C = Call &nbsp;·&nbsp; End = End / Home
+    </p>
+
+    <p class="stage__disclaimer">
+      All calls and messages in KeyOS are simulated. Nothing is sent over a real network.
+    </p>
+
+    <noscript>
+      <p class="stage__hint">KeyOS requires JavaScript to run.</p>
+    </noscript>
+  </main>
+
+  <!-- Modules load in dependency order -->
+  <script src="js/storage.js"></script>
+  <script src="js/clock.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/keypad.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

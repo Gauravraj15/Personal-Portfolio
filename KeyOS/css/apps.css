@@ -1,0 +1,78 @@
+/* ============================================================
+   KeyOS — apps.css
+   Styles for individual screen views rendered inside the LCD.
+   Step 1 contains the standby screen and the generic info screen.
+   ============================================================ */
+
+/* ---------- Standby screen ---------- */
+.screen-view--standby {
+  justify-content: space-between;
+  text-align: center;
+  padding: calc(var(--u) * 3) calc(var(--u) * 3) calc(var(--u) * 2.4);
+}
+
+.standby__top {
+  flex: 0 0 auto;
+}
+
+.standby__brand {
+  font-size: calc(var(--u) * 5.2);
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.standby__tagline {
+  margin-top: calc(var(--u) * 1);
+  font-size: calc(var(--u) * 2.6);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+.standby__middle {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.standby__clock {
+  font-size: calc(var(--u) * 12);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-shadow: 0 0 calc(var(--u) * 2) rgba(22, 49, 11, 0.22);
+}
+
+.standby__date {
+  margin-top: calc(var(--u) * 1.8);
+  font-size: calc(var(--u) * 3.4);
+  letter-spacing: 0.07em;
+  opacity: 0.85;
+}
+
+.standby__bottom {
+  flex: 0 0 auto;
+}
+
+.standby__echo {
+  min-height: calc(var(--u) * 4);
+  font-size: calc(var(--u) * 3.2);
+  letter-spacing: 0.04em;
+  opacity: 0.9;
+}
+
+.standby__note {
+  margin-top: calc(var(--u) * 1);
+  font-size: calc(var(--u) * 2.6);
+  letter-spacing: 0.06em;
+  opacity: 0.55;
+}
+
+/* ---------- Generic info screen (used by Step 1 placeholders) ---------- */
+.screen-view--info {
+  justify-content: flex-start;
+}

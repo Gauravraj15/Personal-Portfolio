@@ -1,0 +1,382 @@
+/* ============================================================
+   KeyOS — phone.css
+   The physical phone body: shell, speaker, LCD screen,
+   status bar, soft key bar, and the full keypad.
+   ============================================================ */
+
+/* ---------- Phone shell ---------- */
+.phone {
+  position: relative;
+  width: var(--phone-w);
+  padding: calc(var(--u) * 3) calc(var(--u) * 3.4) calc(var(--u) * 5);
+
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--u) * 3);
+
+  border: 1px solid var(--body-edge);
+  border-radius:
+    calc(var(--u) * 10) calc(var(--u) * 10)
+    calc(var(--u) * 7)  calc(var(--u) * 7);
+
+  background: linear-gradient(160deg, var(--body-bg-1) 0%, var(--body-bg-2) 62%);
+
+  box-shadow:
+    0 calc(var(--u) * 4) calc(var(--u) * 12) var(--body-shadow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* ---------- Earpiece ---------- */
+.phone__speaker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(var(--u) * 3.6);
+}
+
+.phone__speaker span {
+  display: block;
+  width: calc(var(--u) * 22);
+  height: calc(var(--u) * 1.8);
+  border-radius: 999px;
+  background: linear-gradient(#0a0c10, #232932);
+  box-shadow:
+    inset 0 1px 2px rgba(0, 0, 0, 0.9),
+    0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* ---------- LCD screen ---------- */
+.screen {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 3.6;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  font-family: var(--font-screen);
+  color: var(--screen-fg);
+
+  background: linear-gradient(180deg, var(--screen-bg) 0%, var(--screen-bg-2) 100%);
+
+  border: calc(var(--u) * 1.2) solid #0e1116;
+  border-radius: calc(var(--u) * 2.4);
+
+  box-shadow:
+    inset 0 0 calc(var(--u) * 7) var(--screen-inner-shadow),
+    0 0 calc(var(--u) * 4) var(--screen-glow);
+}
+
+/* Faint CRT scanlines for retro feel */
+.screen__scanlines {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.45;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.07) 0px,
+    rgba(0, 0, 0, 0.07) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+/* ---------- Status bar ---------- */
+.statusbar {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  gap: calc(var(--u) * 1.6);
+
+  padding: calc(var(--u) * 1.6) calc(var(--u) * 2.4);
+  font-size: calc(var(--u) * 3.2);
+  line-height: 1;
+
+  border-bottom: 1px solid var(--screen-fg-soft);
+}
+
+.statusbar__network {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: center;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---------- Signal meter ---------- */
+.meter {
+  display: inline-flex;
+  align-items: flex-end;
+  flex: 0 0 auto;
+}
+
+.meter--signal {
+  gap: 1px;
+  height: calc(var(--u) * 3.2);
+}
+
+.meter--signal i {
+  width: calc(var(--u) * 0.9);
+  background: var(--screen-fg);
+  opacity: 0.2;
+  border-radius: 1px 1px 0 0;
+  transition: opacity 0.3s ease;
+}
+
+.meter--signal i:nth-child(1) { height: 30%; }
+.meter--signal i:nth-child(2) { height: 52%; }
+.meter--signal i:nth-child(3) { height: 76%; }
+.meter--signal i:nth-child(4) { height: 100%; }
+
+.meter--signal i.is-on {
+  opacity: 1;
+}
+
+/* ---------- Battery meter ---------- */
+.meter--battery {
+  position: relative;
+  display: inline-block;
+  width: calc(var(--u) * 8.4);
+  height: calc(var(--u) * 3.4);
+  padding: 1px;
+  border: 1.5px solid var(--screen-fg);
+  border-radius: 2px;
+}
+
+/* Battery terminal nub */
+.meter--battery::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: calc(var(--u) * -0.9);
+  transform: translateY(-50%);
+  width: calc(var(--u) * 0.7);
+  height: 42%;
+  background: var(--screen-fg);
+  border-radius: 0 1px 1px 0;
+}
+
+.meter__fill {
+  display: block;
+  height: 100%;
+  width: 80%;
+  background: var(--screen-fg);
+  border-radius: 1px;
+  transition: width 0.4s ease;
+}
+
+/* ---------- Screen content area ---------- */
+.screen__content {
+  position: relative;
+  z-index: 2;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ---------- Soft key label bar ---------- */
+.softbar {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(var(--u) * 2);
+
+  padding: calc(var(--u) * 1.4) calc(var(--u) * 2.4);
+  font-size: calc(var(--u) * 3.4);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+
+  border-top: 1px solid var(--screen-fg-soft);
+}
+
+.softbar__label {
+  min-width: 0;
+  max-width: 48%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* ---------- Keypad ---------- */
+.keypad {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--u) * 2);
+  margin-top: calc(var(--u) * 0.6);
+}
+
+/* ---------- Base key ---------- */
+.key {
+  appearance: none;
+  -webkit-appearance: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+
+  padding: 0;
+  margin: 0;
+
+  border: 1px solid var(--key-border);
+  border-radius: calc(var(--u) * 2);
+
+  background: linear-gradient(180deg, var(--key-face-1) 0%, var(--key-face-2) 100%);
+  color: var(--key-text);
+
+  font-family: inherit;
+  font-size: calc(var(--u) * 4);
+  line-height: 1;
+
+  cursor: pointer;
+  touch-action: manipulation;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 calc(var(--u) * 0.5) calc(var(--u) * 1) rgba(0, 0, 0, 0.45);
+
+  transition:
+    transform 0.06s ease,
+    filter 0.12s ease,
+    box-shadow 0.06s ease;
+}
+
+.key:hover {
+  filter: brightness(1.14);
+}
+
+.key:active,
+.key.is-pressed {
+  transform: translateY(1px);
+  filter: brightness(1.32);
+  box-shadow:
+    inset 0 0 calc(var(--u) * 3) rgba(255, 255, 255, 0.16),
+    0 0 0 rgba(0, 0, 0, 0);
+}
+
+.key:focus-visible {
+  outline: 2px solid #7fd4ff;
+  outline-offset: 1px;
+}
+
+.key__glyph {
+  font-size: calc(var(--u) * 3.4);
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+/* ---------- Navigation cluster ---------- */
+.keypad__nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: calc(var(--u) * 1.6);
+}
+
+.keypad__nav .key {
+  height: calc(var(--u) * 8.4);
+}
+
+.keypad__blank {
+  display: block;
+}
+
+.key--soft .key__glyph {
+  font-size: calc(var(--u) * 2.8);
+  opacity: 0.85;
+}
+
+.key--ok {
+  background: linear-gradient(180deg, #4a525d 0%, #2c333c 100%);
+}
+
+.key--ok .key__glyph {
+  font-size: calc(var(--u) * 3.6);
+  letter-spacing: 0.06em;
+}
+
+/* ---------- Call / End row ---------- */
+.keypad__call {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(var(--u) * 1.6);
+}
+
+.keypad__call .key {
+  height: calc(var(--u) * 8);
+}
+
+.key--call {
+  background: linear-gradient(180deg, var(--key-call-1) 0%, var(--key-call-2) 100%);
+  border-color: var(--key-call-border);
+  color: #eafff1;
+}
+
+.key--call .key__glyph,
+.key--end .key__glyph {
+  font-size: calc(var(--u) * 4.2);
+}
+
+.key--end {
+  background: linear-gradient(180deg, var(--key-end-1) 0%, var(--key-end-2) 100%);
+  border-color: var(--key-end-border);
+  color: #fff0f0;
+}
+
+/* ---------- Numeric keypad ---------- */
+.keypad__digits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: calc(var(--u) * 1.6);
+}
+
+.key--digit {
+  height: calc(var(--u) * 9);
+}
+
+.key__num {
+  font-size: calc(var(--u) * 4.2);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.key__letters {
+  display: block;
+  min-height: calc(var(--u) * 2.2);
+  font-size: calc(var(--u) * 2);
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  color: var(--key-text-dim);
+  line-height: 1;
+}
+
+/* ---------- Responsive height clamping ---------- */
+/* Keeps the whole phone visible on short viewports. */
+@media (max-height: 900px) {
+  :root {
+    --phone-w: min(92vw, 340px, calc((100vh - 130px) / 2.25));
+  }
+}
+
+@supports (height: 100dvh) {
+  @media (max-height: 900px) {
+    :root {
+      --phone-w: min(92vw, 340px, calc((100dvh - 130px) / 2.25));
+    }
+  }
+}
